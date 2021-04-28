@@ -49,6 +49,7 @@ jobs:
       - name: Build linux_386
         run: |
           sudo apt-get -y install libc6-dev-i386
+          echo "CC=gcc CGO_ENABLED=1 GOOS=linux GOARCH=386 go build -o alist_linux_386 alist.go"
           CC=gcc CGO_ENABLED=1 GOOS=linux GOARCH=386 go build -o alist_linux_386 alist.go
 
       - name: Upload artifacts linux_amd64
